@@ -1,0 +1,45 @@
+<div id="profile">
+  <div class="pro-overlay">
+    <div class="pro-inner-box">
+      <div class="pro-title animated fadeInDown">
+        <h4>Username</h4>
+      </div>
+      <span class="pro-span animated zoomIn"></span>
+      <div class="title-name">
+        <h4><%= user %></h4>
+      </div>
+      <div class="pro-title animated fadeInDown">
+        <h4>Email</h4>
+      </div>
+      <span class="pro-span animated zoomIn"></span>
+      <div class="title-name">
+        <h4><%= foundUser.email %></h4>
+      </div>
+      <div class="pro-title animated fadeInDown">
+        <h4>Status</h4>
+      </div>
+      <span class="pro-span animated zoomIn"></span>
+      <div class="title-name">
+        <h4><%= foundUser.position %></h4>
+      </div>
+      <div style="width: auto;height: auto;padding: 8px 16px;position: inherit;border-radius: 3px;font-size: 15px;font-weight: 400;color: #243a51;display: inline-block;" class="project-add-disk animated jackInTheBox">
+        Reset Password
+      </div>
+    </div>
+  </div>
+</div>
+<div id="projects-add-model" class="cat-modal animated fadeInDownBig">
+  <form class="model-form" action="/dashboard/reset-password/<%= foundUser._id %>" method="POST">
+    <h4>Reset Password</h4>
+    <span></span>
+    <input type="password" name="password" placeholder="Enter Password" class="addCat-input">
+    <input type="password" name="confirmPassword" placeholder="Repeat Password" class="addCat-input">
+    <div class="model-btn">
+      <a class="left-btn">Cancel</a>
+      <div class="modal-logo-box">
+        <img src="/website/code-cyan.svg" alt="logo">
+      </div>
+      <button type="submit" class="right-btn">Submit</button>
+    </div>
+  </form>
+</div>

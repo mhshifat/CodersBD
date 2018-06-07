@@ -1,0 +1,70 @@
+<div id="blog">
+  <div class="blog-left-side animated fadeInUp">
+    <div class="blog-image">
+      <img src="/uploads/<%= post.image %>" alt="post image">
+    </div>
+    <div class="title-box">
+      <div class="pro-img-box">
+        <img src="/website/boy.svg" alt="profile image">
+      </div>
+      <div class="title">
+        <div class="blog-title">
+          <h4><%= post.title %></h4>
+        </div>
+        <div class="author">
+          <ul class="author-menu">
+            <li class="author-list"><h5><i class="far fa-user"></i>&nbsp;&nbsp;<%= post.author %></h5></li>
+            <li class="author-list"><h5><i class="far fa-clock"></i>&nbsp;&nbsp;<%= post.date %></h5></li>
+            <li class="author-list"><h5><a href=""><i class="far fa-heart"></i> 5</a></h5></li>
+            <li class="author-list"><h5><a href=""><i class="far fa-comments"></i> 5</a></h5></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="horizontal-ads"><%- pua %></div>
+    <div class="blog-body">
+      <%- post.content %>
+    </div>
+      <div class="horizontal-ads"><%- pla %></div>
+    <div class="blog-tags">
+      <ul class="tags-menu wow fadeInRight" data-wow-duration="1s" data-wow-delay=".1s">
+        <li class="tags-list">Tags :</li>
+        <li class="tags-list"><%= post.tags %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="blog-right-side animated fadeInDown">
+    <div class="blog-search-box">
+      <form class="blog-search-form" action="">
+        <input type="text" name="search" class="search-input" placeholder="Search by post title, author">
+        <button type="submit" disabled class="search-btn"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+    <div id="vertical-ads"><%- sua %></div>
+    <div class="blogs-categories">
+      <h3 class="wow zoomIn" data-wow-duration="1s" data-wow-delay="1s">Categories</h3>
+      <ul class="blog-cat-menu">
+        <% if(cats.length > 0) {%>
+          <% cats.forEach(cat => { %>
+            <li class="blog-cat-list">
+              <a class="blog-list-link" href=""><i class="fas fa-angle-left"></i><%= cat.name %></a>
+            </li>
+          <% }) %>
+        <% } %>
+      </ul>
+    </div>
+    <div class="blog-recent-posts">
+      <h3 class="wow zoomIn" data-wow-duration="1s" data-wow-delay="1s">Recent Posts</h3>
+      <ul class="recent-post-menu">
+        <% if(posts.length > 0) {%>
+          <% posts.forEach(post => { %>
+            <li class="recent-post-blog-list">
+              <a class="recent-post-blog-link" href=""><i class="fas fa-angle-left"></i><%= post.title %></a>
+            </li>
+          <% }) %>
+        <% } %>
+      </ul>
+    </div>
+    <div id="vertical-ads"><%- sla %></div>
+  </div>
+</div>

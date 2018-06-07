@@ -1,0 +1,151 @@
+<div id="allPosts">
+  <!-- Post Header -->
+  <div class="post-header animated fadeInDown">
+    <!-- Post Image -->
+    <div class="post-image-box">
+      <div class="image-head">Image</div>
+    </div>
+    <!-- Post Title -->
+    <div class="post-title-box">
+      <div class="title-head">Title</div>
+    </div>
+    <!-- Post Author -->
+    <div class="post-author-box">
+      <div class="author-head">Author</div>
+    </div>
+    <!-- Post Category -->
+    <div class="post-category-box">
+      <div class="category-head">Category</div>
+    </div>
+    <!-- Post Tags -->
+    <div class="post-tags-box">
+      <div class="tags-head">Tags</div>
+    </div>
+    <!-- Post Comments -->
+    <div class="post-comment-box">
+      <div class="comment-head">Comments</div>
+    </div>
+    <!-- Post Date -->
+    <div class="post-date-box">
+      <div class="date-head">Date</div>
+    </div>
+    <!-- Post Status -->
+    <div class="post-status-box">
+      <div class="status-head">Status</div>
+    </div>
+    <!-- Post Edit -->
+    <div class="post-edit-box">
+      <div class="edit-head">Edit</div>
+    </div>
+    <!-- Post Delete -->
+    <div class="post-delete-box">
+      <div class="delete-head">Delete</div>
+    </div>
+  </div>
+  <!-- Post 1 -->
+  <% if(admin) { %>
+    <% if(posts.length > 0) { %>
+      <% posts.forEach(post => { %>
+        <div class="inner-post animated fadeInUp">
+          <!-- Post Image -->
+          <div class="post-image-box">
+            <div class="image" style="padding: 1rem;">
+              <img src="/uploads/<%= post.image %>" alt="post image" class="post-img">
+            </div>
+          </div>
+          <!-- Post Title -->
+          <div class="post-title-box">
+            <div style="padding-left: 2rem;justify-content:center;" class="title"><h4><%= post.title %></h4></div>
+          </div>
+          <!-- Post Author -->
+          <div class="post-author-box">
+            <div style="padding-left: 2rem;" class="author"><h4><%= post.author %></h4></div>
+          </div>
+          <!-- Post Category -->
+          <div class="post-category-box">
+            <div style="padding-left: 2rem;" class="category"><h4><%= post.category %></h4></div>
+          </div>
+          <!-- Post Tags -->
+          <div class="post-tags-box">
+            <div style="padding-left: 2rem;" class="tags"><h4><%= post.tags %></h4></div>
+          </div>
+          <!-- Post Comments -->
+          <div class="post-comment-box">
+            <div style="padding-left: 2rem;" class="comment"><h4>1000</h4></div>
+          </div>
+          <!-- Post Date -->
+          <div class="post-date-box">
+            <div style="padding-left: 2rem;" class="date"><h4><%= post.date %></h4></div>
+          </div>
+          <!-- Post Status -->
+          <% if(post.status === 'Published') { %>
+            <div class="post-status-box">
+              <div style="padding-left: 2rem;" class="status"><a style="color: #243a51;" href="/post/<%= post._id %>/published"><h4>Published</h4></a></div>
+            </div>
+          <% } else if(post.status === 'Not Published') { %>
+            <div class="post-status-box">
+              <div style="padding-left: 2rem;" class="status"><a style="color: #243a51;" href="/post/<%= post._id %>/notPublished"><h4>Not Published</h4></a></div>
+            </div>
+          <% } %>
+          <!-- Post Edit -->
+          <div class="post-edit-box">
+            <div style="padding-left: 2rem;" class="edit"><a style="color:#243a51;" href="/dashboard/post/<%= post.slug %>/edit"><i class="fas fa-pencil-alt"></i></a></div>
+          </div>
+          <!-- Post Delete -->
+          <div class="post-delete-box">
+            <div style="padding-left: 2rem;" class="delete"><form action="/dashboard/post/<%= post._id %>/delete" method="POST" style="color:#243a51;"><button type="submit"><i class="fas fa-trash"></i></button></form></div>
+          </div>
+        </div>
+      <% }) %>
+    <% } %>
+  <% } else if(user) { %>
+    <% if(userPosts.length > 0) { %>
+      <% userPosts.forEach(userPost => { %>
+        <div class="inner-post animated fadeInUp">
+          <!-- Post Image -->
+          <div class="post-image-box">
+            <div class="image" style="padding: 1rem;">
+              <img src="/uploads/<%= userPost.image %>" alt="post image" class="post-img">
+            </div>
+          </div>
+          <!-- Post Title -->
+          <div class="post-title-box">
+            <div style="padding-left: 2rem;justify-content:center;" class="title"><h4><%= userPost.title %></h4></div>
+          </div>
+          <!-- Post Author -->
+          <div class="post-author-box">
+            <div style="padding-left: 2rem;" class="author"><h4><%= userPost.author %></h4></div>
+          </div>
+          <!-- Post Category -->
+          <div class="post-category-box">
+            <div style="padding-left: 2rem;" class="category"><h4><%= userPost.category %></h4></div>
+          </div>
+          <!-- Post Tags -->
+          <div class="post-tags-box">
+            <div style="padding-left: 2rem;" class="tags"><h4><%= userPost.tags %></h4></div>
+          </div>
+          <!-- Post Comments -->
+          <div class="post-comment-box">
+            <div style="padding-left: 2rem;" class="comment"><h4>1000</h4></div>
+          </div>
+          <!-- Post Date -->
+          <div class="post-date-box">
+            <div style="padding-left: 2rem;" class="date"><h4><%= userPost.date %></h4></div>
+          </div>
+          <!-- Post Status -->
+            <div class="post-status-box">
+              <div style="padding-left: 2rem;" class="status"><h4><%= userPost.status %></h4></div>
+            </div>
+          <!-- Post Edit -->
+          <div class="post-edit-box">
+            <div style="padding-left: 2rem;" class="edit"><a style="color:#243a51;" href="/dashboard/post/<%= userPost.slug %>/edit"><i class="fas fa-pencil-alt"></i></a></div>
+          </div>
+          <!-- Post Delete -->
+          <div class="post-delete-box">
+            <div style="padding-left: 2rem;" class="delete"><form action="/dashboard/post/<%= userPost._id %>/delete" method="POST" style="color:#243a51;"><button type="submit"><i class="fas fa-trash"></i></button></form></div>
+          </div>
+        </div>
+      <% }) %>
+    <% } %>
+  <% } %>
+</div>

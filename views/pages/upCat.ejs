@@ -1,0 +1,11 @@
+<div id="addCategory">
+  <div class="cat-overlay">
+    <div style="padding:5rem;" class="cat-inner-box animated fadeInDown">
+      <h3 style="font-size: 15px;color: #243a51;margin-bottom: 2rem;">Update Category</h3>
+      <form style="width: 100%;height: auto;" action="/dashboard/upPost/<%= cat._id %>" method="POST">
+        <input style="background: #eee;width: 100%;height: 4rem;padding-left:2rem;margin-bottom:2rem;" type="text" name="category" value="<%= cat.name %>">
+        <button style="padding: 8px 16px;border: 2px solid #243a51;color: #243a51;font-size: 15px;font-weight: 400;background: transparent;" type="submit">Update</button>
+      </form>
+    </div>
+  </div>
+</div>

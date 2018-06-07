@@ -1,0 +1,5 @@
+<% if(error.length > 0) { %>
+  <div id="message" class="error"><i class="fas fa-exclamation-circle message-icon"></i> <%= error %>....</div>
+<% } else if(success.length > 0) { %>
+  <div id="message" class="success"><i class="fas fa-check-circle message-icon"></i> <%= success %>....</div>
+<% } %>

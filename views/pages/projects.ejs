@@ -1,0 +1,35 @@
+<div id="projects">
+  <div class="projects-wrapper animated zoomIn">
+    <!-- Project 1 -->
+    <% if(projects.length > 0) { %>
+      <% projects.forEach(project => { %>
+        <div class="projects-card">
+          <img src="/projects/<%= project.project %>" alt="project image">
+          <form action="/projects/<%= project._id %>/delete" method="POST">
+            <button type="submit">
+              <i id="delete-icon" class="fas fa-trash"></i>
+            </button>
+          </form>
+        </div>
+      <% }) %>
+    <% } %>
+  </div>
+</div>
+<div class="project-add-disk animated jackInTheBox">
+    <i class="fas fa-plus"></i>
+</div>
+<div id="projects-add-model" class="animated fadeInDownBig">
+  <form class="model-form" action="/project" method="POST" enctype="multipart/form-data">
+    <h4>Choose your project...</h4>
+    <span></span>
+    <input type="file" name="project" id="file" class="input-file" />
+    <label id="label" for="file">Choose an image...</label>
+    <div class="model-btn">
+      <a class="left-btn">Cancel</a>
+      <div class="modal-logo-box">
+        <img src="/website/code-cyan.svg" alt="logo">
+      </div>
+      <button type="submit" name="submit" class="right-btn">Submit</button>
+    </div>
+  </form>
+</div>

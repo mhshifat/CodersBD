@@ -1,0 +1,154 @@
+<div id="leftNavbar">
+  <div class="leftNavbar-main-section">
+    <div class="logo-section">
+      <div class="brand-box-1">
+        <a href="/" class="logo-link animated fadeInDown">
+          <img src="/website/code-cyan.svg" alt="Website Logo" class="logo">
+          <h2 class="brand-1">CODERSBD</h2>
+        </a>
+      </div>
+    </div>
+    <div class="navbar-search-section animated fadeInLeft">
+      <form action="" method="" class="navbar-search-form">
+        <input type="text" class="navbar-search-input" name="navbar-search" placeholder="Search">
+      </form>
+    </div>
+    <div class="leftNavbar-section">
+      <ul class="leftNavbar-menu-1">
+        <li class="leftNavbar-list-1">
+          <a href="/" class="navbar-list-link animated fadeInLeft">
+            <i class="fas fa-h-square home-icon"></i>
+            <h4 class="home-name">Home</h4>
+          </a>
+        </li>
+        <li class="leftNavbar-list-1">
+          <a href="/blogs" class="navbar-list-link animated fadeInLeft">
+            <i class="fab fa-blogger home-icon"></i>
+            <h4 class="home-name">Blog</h4>
+          </a>
+        </li>
+        <li class="leftNavbar-list-1">
+          <a href="/gallery" class="navbar-list-link animated fadeInLeft">
+            <i class="fas fa-images home-icon"></i>
+            <h4 class="home-name">Gallery</h4>
+          </a>
+        </li>
+        <li class="leftNavbar-list-1">
+          <a href="/forum" class="navbar-list-link animated fadeInLeft">
+            <i class="fas fa-comment-dots home-icon"></i>
+            <h4 class="home-name">Forum</h4>
+          </a>
+        </li>
+        <li class="leftNavbar-list-1">
+          <a href="/shop" class="navbar-list-link animated fadeInLeft">
+            <i class="fas fa-shopping-cart home-icon"></i>
+            <h4 class="home-name">Shop</h4>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="leftNavbar-section-2">
+      <ul class="leftNavbar-menu-2">
+        <li class="leftNavbar-list-2">
+          <a href="/about" class="navbar-list-link-2 animated fadeInLeft">
+            <i class="fas fa-heart home-icon-2"></i>
+            <h4 class="home-name-2">About me</h4>
+          </a>
+        </li>
+        <li class="leftNavbar-list-2">
+          <a href="/contact" class="navbar-list-link-2 animated fadeInLeft">
+            <i class="fas fa-at home-icon-2"></i>
+            <h4 class="home-name-2">Contact me</h4>
+          </a>
+        </li>
+        <% if(!user) { %>
+          <li class="leftNavbar-list-2">
+            <a href="/login" class="navbar-list-link-2 animated fadeInLeft">
+              <i class="fas fa-sign-in-alt home-icon-2"></i>
+              <h4 class="home-name-2">Login</h4>
+            </a>
+          </li>
+          <li class="leftNavbar-list-2">
+            <a href="/register" class="navbar-list-link-2 animated fadeInLeft">
+              <i class="fas fa-user-plus home-icon-2"></i>
+              <h4 class="home-name-2">Get started</h4>
+            </a>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+    <% if(admin) { %>
+      <div class="leftNavbar-section-3">
+        <ul class="toggle-navbar-menu">
+          <li class="toggle-navbar-list-1">
+            <a href="/dashboard/add-projects" class="inner-link animated fadeInLeft">
+              <div class="link-wrapper">
+                <i class="fas fa-image toggle-icon"></i>
+                <h4 class="toggle-name">Projects</h4>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    <% } %>
+    <% if(user) { %>
+      <div class="leftNavbar-section-3-4">
+        <ul class="toggle-navbar-menu-4">
+          <li class="toggle-navbar-list-1-4 animated fadeInLeft">
+            <div class="link-wrapper-4">
+              <i class="fas fa-book toggle-icon-4"></i>
+              <h4 class="toggle-name-4">Posts</h4>
+            </div>
+            <div class="toggle-icon-box-4">
+              <i class="fas fa-angle-down angle-icon-4"></i>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="leftNavbar-section-3-toggle-4">
+        <ul class="inner-menu-4">
+          <li class="inner-list-4">
+            <a href="/dashboard/all-posts" class="inner-link-4 animated fadeInLeft">
+              <h4 class="inner-name-4">All posts</h4>
+            </a>
+          </li>
+          <li class="inner-list-4">
+            <a href="/dashboard/add-post" class="inner-link-4 animated fadeInLeft">
+              <h4 class="inner-name-4">Add posts</h4>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="leftNavbar-section-3">
+        <ul class="toggle-navbar-menu">
+          <li class="toggle-navbar-list-1">
+            <a href="/dashboard/add-category" class="inner-link animated fadeInLeft">
+              <div class="link-wrapper">
+                <i class="fas fa-cubes toggle-icon"></i>
+                <h4 class="toggle-name">Categories</h4>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="leftNavbar-section-3">
+        <ul class="toggle-navbar-menu">
+          <li class="toggle-navbar-list-1">
+            <a href="/dashboard/add-advertises" class="inner-link animated fadeInLeft">
+              <div class="link-wrapper">
+                <i class="fab fa-adversal toggle-icon"></i>
+                <h4 class="toggle-name">Ads</h4>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    <% } %>
+  </div>
+
+  <div class="leftNavbar-bottom-logo-section">
+    <div class="bottom-logo-box animated fadeInUp">
+      <img src="/website/code-cyan.svg" alt="website logo" class="bottom-logo-image">
+    </div>
+  </div>
+</div>

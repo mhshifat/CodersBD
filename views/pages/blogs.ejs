@@ -1,0 +1,56 @@
+<div id="blogs">
+  <div class="blogs-card-box animated zoomIn">
+    <!-- Recent Post 1 -->
+    <% if (posts.length > 0) { %>
+      <% posts.forEach(post => { %>
+        <% if (post.status === 'Published') { %>
+          <div style="margin-right: 0;" class="recent-posts-card">
+            <span class="cat-header"><i class="fas fa-th-list"></i><span class="span"><%= post.category %></span></span>
+            <div class="recent-post-image">
+              <img src="/uploads/<%= post.image %>" alt="post image" title="<%= post.title %>">
+            </div>
+            <div class="recent-post-author">
+              <h5>By, <%= post.author %> - <%= post.date %></h5>
+            </div>
+            <div class="recent-post-title">
+              <h4><%= post.title %></h4>
+            </div>
+            <div class="recent-post-desc">
+              <%- post.content.substr(3, 400) %>...
+            </div>
+            <div class="recent-post-link">
+              <a href="/blogs/<%= post.slug %>">Read more</a>
+            </div>
+          </div>
+        <% } %>
+      <% }) %>
+    <% } %>
+  </div>
+  <div class="pagination">
+    <div class="pagination-box">
+      <ul class="pagination-menu wow zoomIn" data-wow-duration="1s" data-wow-delay=".1s">
+        <li class="pagination-list">
+          <a href="" class="pagination-link"><i class="fas fa-angle-left"></i></a>
+        </li>
+        <li class="pagination-list">
+          <a href="" class="pagination-link">1</a>
+        </li>
+        <li class="pagination-list">
+          <a href="" class="pagination-link">2</a>
+        </li>
+        <li class="pagination-list">
+          <a href="" class="pagination-link">3</a>
+        </li>
+        <li class="pagination-list">
+          <a href="" class="pagination-link">4</a>
+        </li>
+        <li class="pagination-list">
+          <a href="" class="pagination-link">5</a>
+        </li>
+        <li class="pagination-list">
+          <a href="" class="pagination-link"><i class="fas fa-angle-right"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

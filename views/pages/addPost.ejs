@@ -1,0 +1,40 @@
+<div id="addPost">
+  <form action="/post" method="POST" enctype="multipart/form-data" class="add-addPost">
+    <div class="adPost-left-side animated fadeInUp">
+      <div class="addPost-btn">
+        <h3>Add New Post</h3>
+        <button type="submit" class="addPost-submit">Publish</button>
+      </div>
+      <span id="addPost-hr"></span>
+      <div class="addPost-input">
+        <input type="text" class="addPost-inner-input" name="title" placeholder="Enter Post Title">
+      </div>
+      <div class="addPost-textarea">
+        <textarea name="content" class="addPost-inner-textarea"></textarea>
+      </div>
+    </div>
+    <div class="adPost-right-side animated fadeInDown">
+      <h3 class="author-name">Enter Author</h3>
+      <div class="addPost-input">
+        <input type="text" class="addPost-inner-input" name="author" placeholder="Enter Author Name">
+      </div>
+      <h3 class="author-name">Select Category</h3>
+      <div class="addPost-cat">
+        <select name="category" class="addPost-cat-menu">
+          <option value="WordPress" class="addPost-cat-option">WordPress</option>
+          <option value="Html" class="addPost-cat-option">Html</option>
+          <option value="CSS" class="addPost-cat-option">CSS</option>
+        </select>
+      </div>
+      <h3 class="author-name">Enter Tags</h3>
+      <div class="addPost-input">
+        <input type="text" class="addPost-inner-input" name="tags" placeholder="Enter tags separated by ,">
+      </div>
+      <h3 class="author-name">Post Image</h3>
+      <div class="addPost-image-box">
+        <input type="file" id="post-image" name="image" class="post-image-input">
+        <label class="post-image" for="post-image">Select an image...</label>
+      </div>
+    </div>
+  </form>
+</div>

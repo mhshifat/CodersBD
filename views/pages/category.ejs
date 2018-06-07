@@ -1,0 +1,49 @@
+<div id="addCategory">
+  <div class="cat-overlay">
+    <div class="cat-inner-box animated fadeInDown">
+      <div class="cat-header-1">
+        <div class="cat-name">Category Name</div>
+        <div class="cat-edit">Edit</div>
+        <div class="cat-edit">Delete</div>
+      </div>
+      <% if(admin) { %>
+        <% if(allCats.length > 0) { %>
+          <% allCats.forEach(allCat => { %>
+            <div class="cat-body">
+              <div class="cat-body-name"><h4><%= allCat.name %></h4></div>
+              <div class="cat-body-edit"><a href="/dashboard/cat/<%= allCat._id %>/edit"><i style="color:#243a51;" class="fas fa-pencil-alt"></i></a></div>
+              <div class="cat-body-edit"><form action="/dashboard/cat/<%= allCat._id %>/delete" method="POST"><button type="submit"><i style="color:#243a51;" class="fas fa-trash"></i></button></form></div>
+            </div>
+          <% }) %>
+        <% } %>
+      <% } else if(user) { %>
+        <% if(cats.length > 0) { %>
+          <% cats.forEach(cat => { %>
+            <div class="cat-body">
+              <div class="cat-body-name"><h4><%= cat.name %></h4></div>
+              <div class="cat-body-edit"><a href="/dashboard/cat/<%= cat._id %>/edit"><i style="color:#243a51;" class="fas fa-pencil-alt"></i></a></div>
+              <div class="cat-body-edit"><form action="/dashboard/cat/<%= cat._id %>/delete" method="POST"><button type="submit"><i style="color:#243a51;" class="fas fa-trash"></i></button></form></div>
+            </div>
+          <% }) %>
+        <% } %>
+      <% } %>
+    </div>
+  </div>
+</div>
+<div class="project-add-disk animated jackInTheBox">
+  <i class="fas fa-plus"></i>
+</div>
+<div id="projects-add-model" class="cat-modal animated fadeInDownBig">
+  <form class="model-form" action="/category" method="POST">
+    <h4>Add New Category</h4>
+    <span></span>
+    <input type="text" name="category" placeholder="Enter Category Name" class="addCat-input">
+    <div class="model-btn">
+      <a class="left-btn">Cancel</a>
+      <div class="modal-logo-box">
+        <img src="/website/code-cyan.svg" alt="logo">
+      </div>
+      <button type="submit" class="right-btn">Submit</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,178 @@
+<section id="topNavbar">
+  <div class="topNavbar-left-div animated fadeInDown">
+    <i class="fas fa-bars hamburger-icon"></i>
+  </div>
+  <div class="topNavbar-right-div">
+    <ul class="topNavbar-lists">
+      <% if(user) { %>
+        <li class="topNavbar-list-1 animated fadeInDown">
+          <i class="fas fa-bell bell-icon">
+            <div class="pulse-bot"></div>
+          </i>
+        </li>
+        <li class="topNavbar-list-2 animated fadeInDown">
+          <i class="fas fa-envelope message-icon">
+            <div class="pulse-bot-2"></div>
+          </i>
+        </li>
+        <% } %>
+          <li class="topNavbar-list-3 animated fadeInDown">
+            <% if(user) { %>
+              <h5 class="user-name">Hi, <%= user %>!</h5>
+              <% } else { %>
+                <h5 class="user-name">Hi, Guest!</h5>
+                <% } %>
+          </li>
+          <li class="topNavbar-list-4 animated fadeInDown">
+            <div class="user-image-box">
+              <img src="/website/boy.svg" alt="user profile image" class="user-image">
+            </div>
+          </li>
+    </ul>
+  </div>
+</section>
+<div id="profile-box">
+  <ul class="profile-action-menu">
+    <% if(user) { %>
+      <li class="profile-link">
+        <a href="/dashboard/profile" class="pro-link animated fadeInRight">
+          <i class="fas fa-user-alt user-icon"></i>
+          <h5 class="pro-name">Profile</h5>
+        </a>
+      </li>
+      <li class="profile-link-2">
+        <a href="/dashboard/logout" class="pro-link-2 animated fadeInRight">
+          <i class="fas fa-sign-out-alt logout-icon"></i>
+          <h5 class="log-name">Logout</h5>
+        </a>
+      </li>
+      <% } %>
+        <li class="profile-link-2">
+          <a href="/register" class="pro-link-2 animated fadeInRight">
+            <i class="fas fa-user-plus logout-icon"></i>
+            <h5 class="log-name">SignUp</h5>
+          </a>
+        </li>
+        <li class="profile-link-2">
+          <a href="/login" class="pro-link-2 animated fadeInRight">
+            <i class="fas fa-sign-in-alt logout-icon"></i>
+            <h5 class="log-name">SignIn</h5>
+          </a>
+        </li>
+  </ul>
+</div>
+
+<div id="message-box">
+  <div class="m-box-wrapper">
+    <ul class="message-list-menu">
+      <li class="message-list-1 animated fadeInDown">
+        <h4 class="message-bar">Message Board</h4>
+      </li>
+      <li class="message-list-2 animated zoomIn">
+        <div class="message-wrapper">
+          <div class="messenger">
+            <div class="messenger-box-1">
+              <img src="/website/man.svg" alt="messenger image" class="messenger-image-1">
+            </div>
+          </div>
+          <div class="message-box-1">
+            <h5 class="messenger-name">Mehedi Hassan Shifat</h5>
+            <p class="messenger-message">Hi buddy, I love your work. Would you like to do a project with me?</p>
+            <h6 class="message-time">10 hours ago</h6>
+          </div>
+        </div>
+      </li>
+      <li class="message-list-2 animated zoomIn">
+        <div class="message-wrapper">
+          <div class="messenger">
+            <div class="messenger-box-1">
+              <img src="/website/man.svg" alt="messenger image" class="messenger-image-1">
+            </div>
+          </div>
+          <div class="message-box-1">
+            <h5 class="messenger-name">Mehedi Hassan Shifat</h5>
+            <p class="messenger-message">Hi buddy, I love your work. Would you like to do a project with me?</p>
+            <h6 class="message-time">10 hours ago</h6>
+          </div>
+        </div>
+      </li>
+      <li class="message-list-2 animated zoomIn">
+        <div class="message-wrapper">
+          <div class="messenger">
+            <div class="messenger-box-1">
+              <img src="/website/man.svg" alt="messenger image" class="messenger-image-1">
+            </div>
+          </div>
+          <div class="message-box-1">
+            <h5 class="messenger-name">Mehedi Hassan Shifat</h5>
+            <p class="messenger-message">Hi buddy, I love your work. Would you like to do a project with me?</p>
+            <h6 class="message-time">10 hours ago</h6>
+          </div>
+        </div>
+      </li>
+      <li class="message-list-3 animated fadeInUp">
+        <a href="/user/messages" class="message-link-route">
+          <h5 class="message-bar-1">See All Messages</h5>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<div id="notification-box">
+  <div class="notification-box-wrapper">
+    <ul class="notification-list-menu">
+      <li class="notification-list-1 animated fadeInDown">
+        <h4 class="notification-bar">Notification Board</h4>
+      </li>
+      <li class="notification-list-2 animated zoomIn">
+        <div class="notification-wrapper">
+          <div class="messenger">
+            <div class="messenger-box-1">
+              <img src="/website/man.svg" alt="messenger image" class="messenger-image-1">
+            </div>
+          </div>
+          <div class="notification-box-1">
+            <h5 class="messenger-name">From Mehedi Hassan Shifat</h5>
+            <p class="messenger-notification">Great article, one like from me to your awesome Blog........</p>
+            <h6 class="notification-time">10 hours ago</h6>
+          </div>
+        </div>
+      </li>
+      <li class="notification-list-2 animated zoomIn">
+        <div class="notification-wrapper">
+          <div class="messenger">
+            <div class="messenger-box-1">
+              <img src="/website/man.svg" alt="messenger image" class="messenger-image-1">
+            </div>
+          </div>
+          <div class="notification-box-1">
+            <h5 class="messenger-name">From Mehedi Hassan Shifat</h5>
+            <p class="messenger-notification">Great article, one like from me to your awesome Blog........</p>
+            <h6 class="notification-time">10 hours ago</h6>
+          </div>
+        </div>
+      </li>
+      <li class="notification-list-2 animated zoomIn">
+        <div class="notification-wrapper">
+          <div class="messenger">
+            <div class="messenger-box-1">
+              <img src="/website/man.svg" alt="messenger image" class="messenger-image-1">
+            </div>
+          </div>
+          <div class="notification-box-1">
+            <h5 class="messenger-name">From Mehedi Hassan Shifat</h5>
+            <p class="messenger-notification">Great article, one like from me to your awesome Blog........</p>
+            <h6 class="notification-time">10 hours ago</h6>
+          </div>
+        </div>
+      </li>
+      <li class="notification-list-3 animated fadeInUp">
+        <a href="/user/notifications" class="notification-link-route">
+          <h5 class="notification-bar-1">See All Notifications</h5>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

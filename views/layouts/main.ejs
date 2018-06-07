@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/website/code.png" type="image/x-icon">
+  <title>CodersBD | <%= title %></title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Roboto:300,400,500,700,900|Vollkorn:400,600,700,900" rel="stylesheet">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+  crossorigin="anonymous">
+  <!-- Magnific Popup CSS -->
+  <link rel="stylesheet" href="/css/magnific-popup.css">
+  <!-- Animate CSS -->
+  <link rel="stylesheet" href="/css/animate.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/app.min.css">
+</head>
+<body>
+
+  <%- include ../includes/messages %>
+
+  <%- include ../includes/topNavbar %>
+
+  <%- include ../includes/leftNavbar %>
+
+  <div id="main-wrapper">
+    <div class="inner-wrapper">
+      <div class="main-content">
+        <%- body %>
+      </div>
+      <%- include ../includes/footer %>
+    </div>
+  </div>
+
+<!-- JavaScript -->
+<!-- JQuery JS -->
+<script src="/js/jquery-3.3.1.min.js"></script>
+<!-- Magnific Popup JS -->
+<script src="/js/jquery.magnific-popup.min.js"></script>
+<!-- Wow JS -->
+<script src="/js/wow.min.js"></script>
+<!-- Custom JS -->
+<script src="/js/app.min.js"></script>
+<!-- Tinymce -->
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+</body>
+</html>

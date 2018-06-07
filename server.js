@@ -19,6 +19,10 @@ const config = require("./config/config")
 
 // Models
 const User = require("./models/User")
+const PostUpAds = require("./models/PostUpAds")
+const PostLoAds = require("./models/PostLoAds")
+const SideUpAds = require("./models/SideUpAds")
+const SideLoAds = require("./models/SideLoAds")
 
 // Require Routes
 const defaultRoutes = require("./routes/default")
@@ -74,6 +78,131 @@ app.use((req, res, next) => {
   }
 })
 
+app.use((req, res, next) => {
+  if (!req.cookies.CodersBD) {
+    next()
+  } else {
+    User.findOne({username: req.cookies.CodersBD}, (err, localUser) => {
+      if(err) {
+        console.log(err)
+      } else {
+        if(localUser.postUpAds.length == 0) {
+          PostUpAds.create({content: 'Ads No 1'}, (err, ad_1) => {
+            if(err) {
+              console.log(err)
+            } else {
+              localUser.postUpAds.push(ad_1)
+              localUser.save(err => {
+                if(err) {
+                  console.log(err)
+                } else {
+                  next()
+                }
+              })
+            }
+          })
+        } else {
+          next()
+        }
+      }
+    })
+  }
+})
+
+
+app.use((req, res, next) => {
+  if (!req.cookies.CodersBD) {
+    next()
+  } else {
+    User.findOne({username: req.cookies.CodersBD}, (err, localUser) => {
+      if(err) {
+        console.log(err)
+      } else {
+        if(localUser.postLoAds.length == 0) {
+          PostLoAds.create({content: 'Ads No 2'}, (err, ad_2) => {
+            if(err) {
+              console.log(err)
+            } else {
+              localUser.postLoAds.push(ad_2)
+              localUser.save(err => {
+                if(err) {
+                  console.log(err)
+                } else {
+                  next()
+                }
+              })
+            }
+          })
+        } else {
+          next()
+        }
+      }
+    })
+  }
+})
+
+
+app.use((req, res, next) => {
+  if (!req.cookies.CodersBD) {
+    next()
+  } else {
+    User.findOne({username: req.cookies.CodersBD}, (err, localUser) => {
+      if(err) {
+        console.log(err)
+      } else {
+        if(localUser.sideUpAds.length == 0) {
+          SideUpAds.create({content: 'Ads No 3'}, (err, ad_3) => {
+            if(err) {
+              console.log(err)
+            } else {
+              localUser.sideUpAds.push(ad_3)
+              localUser.save(err => {
+                if(err) {
+                  console.log(err)
+                } else {
+                  next()
+                }
+              })
+            }
+          })
+        } else {
+          next()
+        }
+      }
+    })
+  }
+})
+
+app.use((req, res, next) => {
+  if (!req.cookies.CodersBD) {
+    next()
+  } else {
+    User.findOne({username: req.cookies.CodersBD}, (err, localUser) => {
+      if(err) {
+        console.log(err)
+      } else {
+        if(localUser.sideLoAds.length == 0) {
+          SideLoAds.create({content: 'Ads No 4'}, (err, ad_4) => {
+            if(err) {
+              console.log(err)
+            } else {
+              localUser.sideLoAds.push(ad_4)
+              localUser.save(err => {
+                if(err) {
+                  console.log(err)
+                } else {
+                  next()
+                }
+              })
+            }
+          })
+        } else {
+          next()
+        }
+      }
+    })
+  }
+})
 
 // Use Of Routes
 app.use(defaultRoutes)

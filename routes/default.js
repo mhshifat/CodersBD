@@ -58,19 +58,19 @@ router.get('/blogs/:title', (req, res) => {
             if(err) {
               console.log(err)
             } else {
-              User.findOne({username: req.cookies.CodersBD}).populate('postUpAds').exec((err, pua) => {
-                User.findOne({username: req.cookies.CodersBD}).populate('postLoAds').exec((err, pla) => {
-                  User.findOne({username: req.cookies.CodersBD}).populate('sideUpAds').exec((err, sua) => {
-                    User.findOne({username: req.cookies.CodersBD}).populate('sideLoAds').exec((err, sla) => {
+              Post.findOne({slug: req.params.title}).populate("postUpAds").exec((err, postUpAds) => {
+                Post.findOne({slug: req.params.title}).populate("postLoAds").exec((err, postLoAds) => {
+                  Post.findOne({slug: req.params.title}).populate("sideUpAds").exec((err, sideUpAds) => {
+                    Post.findOne({slug: req.params.title}).populate("sideLoAds").exec((err, sideLoAds) => {
                       res.render("pages/blog", {
                         title: post.title,
                         post,
                         posts,
                         cats,
-                        pua: pua.postUpAds[0].content,
-                        pla: pla.postLoAds[0].content,
-                        sua: sua.sideUpAds[0].content,
-                        sla: sla.sideLoAds[0].content
+                        pua: postUpAds.postUpAds[0].content,
+                        pla: postLoAds.postLoAds[0].content,
+                        sua: sideUpAds.sideUpAds[0].content,
+                        sla: sideLoAds.sideLoAds[0].content
                       })
                     })
                   })

@@ -50,7 +50,27 @@ const postSchema = new mongoose.Schema({
   dateTime: {
     type: Date,
     default: Date.now()
-  }
+  },
+  username: {
+    type: String,
+    required: true
+  },
+  postUpAds: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "PostUpAds"
+  }],
+  postLoAds: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "PostLoAds"
+  }],
+  sideUpAds: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "SideUpAds"
+  }],
+  sideLoAds: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "SideLoAds"
+  }]
 })
 
 module.exports = mongoose.model("Post", postSchema)
